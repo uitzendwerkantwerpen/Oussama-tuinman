@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oussama Tuinman | Premium Tuin Design & Onderhoud</title>
+    <title>Oussama Tuinman | Master in Premium Tuin Design</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;800&display=swap" rel="stylesheet">
     
     <style>
-        /* Luxe, diepe charcoal-groene achtergrond in plaats van hard zwart */
+        /* Luxe, diepe charcoal-groene achtergrond */
         body { font-family: 'Outfit', sans-serif; background-color: #0b1410; color: #f9fafb; overflow-x: hidden; }
         html { scroll-behavior: smooth; }
         
@@ -50,17 +50,14 @@
     <nav class="glass-nav fixed w-[95%] max-w-7xl top-4 left-1/2 transform -translate-x-1/2 z-50 rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.5)] transition-all duration-300">
         <div class="px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-24">
-                <div class="flex-shrink-0 flex items-center bg-white rounded-xl p-1 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
-                    <img src="logoot.jpg" alt="Logo" class="h-20 w-auto object-contain">
-                </div>
                 
-                <div class="hidden md:flex space-x-8 font-semibold text-gray-300 tracking-wide uppercase text-sm">
+                <div class="hidden md:flex space-x-10 font-semibold text-gray-300 tracking-wide uppercase text-sm">
                     <a href="#home" class="hover:text-green-400 transition drop-shadow-md">Home</a>
                     <a href="#diensten" class="hover:text-green-400 transition drop-shadow-md">Diensten</a>
                     <a href="#portfolio" class="hover:text-green-400 transition drop-shadow-md">Portfolio</a>
                 </div>
                 
-                <div class="hidden sm:flex items-center">
+                <div class="flex items-center">
                     <a href="tel:+32489409066" class="neon-bg text-white px-6 py-3 rounded-xl font-bold tracking-wide hover:bg-green-500 transition flex items-center">
                         <i class="fas fa-phone-alt mr-2 animate-pulse"></i> Bel nu voor offerte
                     </a>
@@ -71,8 +68,12 @@
 
     <div id="home" class="flex flex-col lg:flex-row min-h-[80vh] relative mt-10">
         <div class="w-full lg:w-1/2 flex flex-col justify-center px-8 md:px-16 py-10 z-10">
-            <div class="max-w-xl">
-                <span class="neon-text font-bold tracking-widest uppercase mb-4 block">De Tuin Meester</span>
+            <div class="max-w-xl mx-auto lg:mr-auto lg:ml-0">
+                
+                <div class="inline-block bg-white/95 p-3 rounded-2xl mb-8 shadow-[0_0_20px_rgba(255,255,255,0.1)] border border-white/10">
+                    <img src="logoot.jpg" alt="Oussama Tuinman Logo" class="h-48 w-auto object-contain" alt="Oussama Tuinman Logo">
+                </div>
+
                 <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight text-white">
                     Perfectie in <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">Elke Tuin.</span>
                 </h1>
@@ -261,7 +262,6 @@
                 <button class="neon-bg text-white w-8 h-8 rounded-full flex items-center justify-center"><i class="fas fa-paper-plane text-sm"></i></button>
             </div>
         </div>
-        
         <button id="aiChatToggle" onclick="toggleChat()" class="w-16 h-16 neon-bg rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(16,185,129,0.5)] hover:scale-110 transition-transform relative">
             <i class="fas fa-comment-dots text-white text-3xl"></i>
             <span class="absolute top-0 right-0 w-4 h-4 bg-red-500 rounded-full border-2 border-[#0b1410] animate-pulse"></span>
@@ -269,13 +269,12 @@
     </div>
 
     <script>
-        // --- 1. Flawless Slider ---
+        // --- Slider ---
         const slider = document.getElementById('slider');
         const images = document.querySelectorAll('.slider-image');
         const dotsContainer = document.getElementById('slider-dots');
         let currentSlide = 0;
         
-        // Genereer dots dynamisch gebaseerd op exact aantal fotos
         images.forEach((_, index) => {
             const dot = document.createElement('span');
             dot.className = `w-3 h-3 rounded-full shadow-lg transition-all duration-300 cursor-pointer ${index === 0 ? 'bg-white scale-125' : 'bg-white/40'}`;
@@ -297,7 +296,7 @@
             goToSlide(nextSlide);
         }, 4000);
 
-        // --- 2. Modals (Popups) ---
+        // --- Modals ---
         const modal = document.getElementById('serviceModal');
         const mTitle = document.getElementById('modalTitle');
         const mDesc = document.getElementById('modalDesc');
@@ -324,7 +323,7 @@
             if (e.target === modal) closeModal();
         });
 
-        // --- 3. AI Chat Toggle ---
+        // --- Chat ---
         const chatWindow = document.getElementById('aiChatWindow');
         function toggleChat() {
             if(chatWindow.classList.contains('hidden')) {
